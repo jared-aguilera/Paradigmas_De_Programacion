@@ -89,7 +89,7 @@ def simple_lexer(codigo):
 
 
 # Probar
-with open("02-11-2026/ejemplo_code.py", "r") as f:
+with open("ejemplo_code.py", "r") as f:
     codigo = f.read()
 
 print(simple_lexer(codigo))
