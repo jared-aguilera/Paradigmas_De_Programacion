@@ -1,0 +1,16 @@
+cabal-version:      2.4
+name:               ejercicios-haskell
+version:            0.1.0.0
+
+executable mi-app-web
+    main-is:          main.hs
+    -- Aquí le decimos dónde están tus archivos
+    hs-source-dirs:   app, src
+    other-modules:    Capitulo1
+    build-depends:    
+        base ^>=4.18.2.1,
+        scotty,
+        aeson,
+        wai-middleware-static,
+        text
+    default-language: Haskell2010

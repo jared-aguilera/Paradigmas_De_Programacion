@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problemario Haskell - U4</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#1a1c20] text-gray-200 flex h-screen overflow-hidden">
+
+    <aside class="w-64 bg-[#25282e] border-r border-[#3f444d] flex flex-col">
+        <div class="p-6">
+            <h2 class="text-[#3482b9] font-bold text-xl uppercase tracking-wider">Capítulos</h2>
+        </div>
+        <nav class="flex-1 px-4 space-y-2 overflow-y-auto">
+            <button onclick="verCapitulo(1)" class="nav-btn active w-full text-left p-3 rounded-lg transition" id="btn-cap-1">Capítulo 1</button>
+            <button onclick="verCapitulo(2)" class="nav-btn w-full text-left p-3 rounded-lg transition" id="btn-cap-2">Capítulo 2</button>
+            </nav>
+    </aside>
+
+    <main class="flex-1 flex flex-col overflow-y-auto p-10">
+        <header class="mb-10 text-center">
+            <h1 class="text-4xl font-extrabold text-white">Problemario Haskell</h1>
+            <p class="text-gray-400 mt-2 italic">Unidad 4: Programación Funcional</p>
+        </header>
+
+        <section id="seccion-cap-1" class="capitulo-content">
+            <div class="mb-8 border-b border-[#3f444d] pb-4">
+                <h2 class="text-2xl text-[#3482b9]">Capítulo 1: Programación Básica</h2>
+                <p class="text-sm text-gray-500 mt-1">Introducción a la recursividad y tipos de datos simples.</p>
+            </div>
+
+            <div class="exercise-card bg-[#25282e] border border-[#3f444d] p-6 rounded-2xl mb-6 shadow-xl">
+                <h3 class="text-[#3482b9] font-semibold text-lg flex items-center">
+                    <span class="bg-[#3482b9] text-white text-xs px-2 py-1 rounded mr-3">1.1</span> Factorial
+                </h3>
+                <p class="text-gray-400 my-4 text-sm">Calcula el producto de todos los números desde 1 hasta <b>n</b>.</p>
+                
+                <div class="flex gap-4">
+                    <input type="number" id="input-1-1" placeholder="n" class="bg-[#1a1c20] border border-[#3f444d] p-2 rounded-lg focus:outline-none focus:border-[#3482b9] w-32">
+                    <button onclick="ejecutar(1, 1)" class="bg-[#3482b9] hover:bg-[#296a99] text-white px-6 py-2 rounded-lg font-bold transition">Calcular</button>
+                </div>
+
+                <div class="mt-4 p-4 bg-[#1e293b] rounded-lg border-l-4 border-[#2ecc71]">
+                    <span class="text-gray-500 text-xs block mb-1 uppercase font-bold">Resultado:</span>
+                    <code id="res-1-1" class="text-[#2ecc71] font-mono text-lg">---</code>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
