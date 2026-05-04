@@ -27,7 +27,7 @@ menuPrincipal = do
   putStrLn "2. Capitulo 2 --- NÚMEROS Y FUNCIONES"
   putStrLn "3. Capitulo 3 --- ESTRUCTURAS DE DATOS"
   putStrLn "4. Capitulo 4 --- APLICACIONES DE PROGRAMACIÓN FUNCIONAL"
-  putStrLn "5. Capitulo 5 --- INTRODUCCIÓN A LA PROGRAMACIÓN FUNCIONAL (II)"
+  putStrLn "5. Capitulo 5 --- INTRODUCCIÓN A LA PROGRAMACIÓN FUNCIONAL"
   putStrLn "6. Capitulo 6 --- MODELIZACIÓN Y TIPOS DE DATOS"
   putStrLn "7. Capitulo 7 --- RECURSIÓN Y TIPOS DE DATOS"
   putStrLn "8. Capitulo 8 --- LISTAS Y COMPRENSIÓN"
@@ -187,7 +187,7 @@ menuCapitulo5 :: IO ()
 menuCapitulo5 = do
   limpiarPantalla
   putStrLn "============================================================================================================================================"
-  putStrLn "                                                          CAPITULO 5: INTRODUCCIÓN A LA PROGRAMACIÓN FUNCIONAL (II)"
+  putStrLn "                                                          CAPITULO 5: INTRODUCCIÓN A LA PROGRAMACIÓN FUNCIONAL"
   putStrLn "============================================================================================================================================"
   putStrLn "1 --- Cuadrado"
   putStrLn "2 --- Valor Absoluto (Guardas)"
@@ -411,9 +411,10 @@ run1_2 = do
   k <- leerEntero
   if n < 0 || k < 0
     then putStrLn "Error: Los numeros deben ser positivos."
-    else if k > n
-      then putStrLn "Error: 'k' no puede ser mayor que 'n'."
-      else putStr "Resultado: " >> print (ejercicio1_2_comb n k)
+    else
+      if k > n
+        then putStrLn "Error: 'k' no puede ser mayor que 'n'."
+        else putStr "Resultado: " >> print (ejercicio1_2_comb n k)
 
 run1_5 = runListaSimple desc1_5 ejercicio1_5_sumaCuadrados
 
@@ -680,7 +681,7 @@ run11_1 = do
   putStr "> Introduce un numero en formato texto (ej: 123): " >> flush
   s <- getLine
   case readMaybe s :: Maybe Int of
-    Just _  -> putStr "Resultado (read s :: Int): " >> print (ejercicio11_1_analizador s)
+    Just _ -> putStr "Resultado (read s :: Int): " >> print (ejercicio11_1_analizador s)
     Nothing -> putStrLn "Error: El texto introducido no es un numero valido."
 
 run11_2 = do
